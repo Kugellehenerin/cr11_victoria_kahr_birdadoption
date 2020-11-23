@@ -1,3 +1,18 @@
+<?php 
+ob_start();
+session_start();
+require_once 'helper/helper.php';
+
+if (isAdmin()) {
+    echo "Hello admin and welcome to your admin panel!";
+} else {
+    die('No Admin ;) Back to home: <a href="../cr11_victoria_kahr_birdadoption/home.php">Bird Adoption</a>');
+}
+
+require_once 'actions/db_connect.php';
+
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,8 +45,6 @@
 </nav>
 
 <?php 
-
-require_once 'db_connect.php';
 
 if ($_POST) {
     $breed = $_POST['bird_breed'];

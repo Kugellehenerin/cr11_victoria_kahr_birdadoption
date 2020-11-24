@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-require_once 'helper/helper.php';
+require_once '../helper/helper.php';
 
 if (isAdmin()) {
     echo "Hello admin and welcome to your admin panel!";
@@ -9,7 +9,7 @@ if (isAdmin()) {
     die('No Admin ;) Back to home: <a href="../cr11_victoria_kahr_birdadoption/home.php">Bird Adoption</a>');
 }
 
-require_once 'actions/db_connect.php';
+require_once 'db_connect.php';
 
 ?>
 <!DOCTYPE html>

@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-require_once 'helper/helper.php';
+require_once '../helper/helper.php';
 
 if (isAdmin()) {
     echo "Hello admin and welcome to your admin panel!";
@@ -9,7 +9,7 @@ if (isAdmin()) {
     die('No Admin ;) Back to home: <a href="../cr11_victoria_kahr_birdadoption/home.php">Bird Adoption</a>');
 }
 
-require_once 'actions/db_connect.php';
+require_once 'db_connect.php';
 
 ?>
 <!DOCTYPE html>
@@ -47,12 +47,13 @@ require_once 'actions/db_connect.php';
 <?php 
 
 if ($_POST) {
+   $img = $_POST['bird_img'];
    $breed = $_POST['bird_breed'];
    $name = $_POST['bird_name'];
    $age = $_POST[ 'bird_age'];
    $des = $_POST[ 'bird_description'];
 
-   $sql = "INSERT INTO birds (bird_breed, bird_name, bird_age, bird_description) VALUES ('$breed', '$name', '$age','$des')";
+   $sql = "INSERT INTO birds (bird_img, bird_breed, bird_name, bird_age, bird_description) VALUES ('$img', '$breed', '$name', '$age','$des')";
     if($conn->query($sql) === TRUE) {
        echo "<p>New Record Successfully Created</p>" ;
        echo "<a href='../create.php'><button type='button'>Back</button></a>";

@@ -1,7 +1,7 @@
 <?php 
 ob_start();
 session_start();
-require_once 'helper/helper.php';
+require_once '../helper/helper.php';
 
 if (isAdmin()) {
     echo "Hello admin and welcome to your admin panel!";
@@ -9,7 +9,7 @@ if (isAdmin()) {
     die('No Admin ;) Back to home: <a href="../cr11_victoria_kahr_birdadoption/home.php">Bird Adoption</a>');
 }
 
-require_once 'actions/db_connect.php';
+require_once 'db_connect.php';
 
 ?>
 
@@ -47,6 +47,7 @@ require_once 'actions/db_connect.php';
 <?php 
 
 if ($_POST) {
+    $img = $_POST['bird_img'];
     $breed = $_POST['bird_breed'];
     $name = $_POST['bird_name'];
     $age = $_POST[ 'bird_age'];
@@ -54,7 +55,7 @@ if ($_POST) {
 
    $id = $_POST['id'];
 
-   $sql = "UPDATE birds SET bird_breed = '$breed', bird_name = '$name', bird_age = '$age',bird_description = '$des' WHERE id = {$id}" ;
+   $sql = "UPDATE birds SET bird_img = '$img', bird_breed = '$breed', bird_name = '$name', bird_age = '$age',bird_description = '$des' WHERE id = {$id}" ;
    if($conn->query($sql) === TRUE) {
        echo  "<p>Successfully Updated</p>";
        echo "<a href='../update.php?id=" .$id."'><button type='button'>Back</button></a>";

@@ -34,9 +34,13 @@
 
    <form  action="actions/a_create.php" method= "post">
        <table cellspacing= "0" cellpadding="0">
+            <tr>
+               <th>Image</th >
+               <td><input  type="text" name="bird_img"  placeholder="Image"/></td >
+           </tr>  
            <tr>
                <th>Breed</th >
-               <td><input  type="text" name="bird_breed"  placeholder="Breed" /></td >
+               <td><input  type="text" name="bird_breed"  placeholder="Breed"/></td >
            </tr>    
            <tr>
                <th>Name</th>

@@ -50,6 +50,10 @@ if ($_GET['id']) {
 
    <form action="actions/a_update.php"  method="post">
        <table  cellspacing="0" cellpadding= "0">
+            <tr>
+               <th>Image</th >
+               <td><input  type="text" name="bird_img"  placeholder="Image" value="<?php echo $data['bird_img'] ?>"/></td >
+           </tr> 
            <tr>
                <th>Breed</th>
                <td><input type="text"  name="bird_breed" placeholder ="Breed" value="<?php echo $data['bird_breed'] ?>"/></td>
